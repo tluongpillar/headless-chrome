@@ -2,6 +2,7 @@ run docker_build.sh to build the Dockerfile image
 run docker_run.sh to create and run the docker container
 
 /opt/google/chrome-beta/chrome --headless --disable-gpu --no-sandbox --print-to-pdf https://www.espn.com
+
 cp output.pdf /pdf
 
 open up the pdf file in your host machine to view the results
