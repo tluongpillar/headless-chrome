@@ -1,4 +1,5 @@
 const CDP = require('chrome-remote-interface');
+const fs = require('fs');
 
 CDP((client) => {
   // Extract used DevTools domains.
@@ -14,8 +15,8 @@ CDP((client) => {
   // Evaluate outerHTML after page has loaded.
   Page.loadEventFired(() => {
     Runtime.evaluate({expression: 'document.body.outerHTML'}).then((result) => {
-      //console.log(result.result.value);
-      console.log(client.send('Page.printToPDF'));
+      console.log(result.result.value);
+      //console.log(client.send('Page.printToPDF'));
       client.close();
     });
   });
